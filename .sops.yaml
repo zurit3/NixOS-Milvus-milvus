@@ -1,0 +1,8 @@
+keys:
+  - &milvus_host age17k4l9ch3v36ujt7mwps760ngcgdmphmty3rlqgf53679jj97cshsm0th8t
+
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+      - age:
+          - *milvus_host
