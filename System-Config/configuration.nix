@@ -145,7 +145,7 @@
     openFirewall = true;
   };
 
-  programs.ssh.knownHosts = {
+  services.openssh.knownHosts = {
     codeberg = {
       hostNames = [ "codeberg.org" ];
       publicKey = config.sops.secrets."codeberg_public_key".path;
