@@ -149,6 +149,10 @@
       hostNames = [ "codeberg.org" ];
       publicKey = config.sops.secrets."codeberg_public_key".path;
     };
+    github = {
+      hostNames = [ "github.com" ];
+      publicKey = config.sops.secrets."github_public_key".path;
+    };
   };
 
   #boot stuff
