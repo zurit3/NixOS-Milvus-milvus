@@ -79,8 +79,6 @@
     secrets = {
       "lastfm_api_key" = {};
       "lastfm_secret" = {};
-      "codeberg_public_key" = {};
-      "github_public_key" = {};
     };
   };
 
@@ -148,11 +146,11 @@
   services.openssh.knownHosts = {
     codeberg = {
       hostNames = [ "codeberg.org" ];
-      publicKey = config.sops.secrets."codeberg_public_key".path;
+      publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIVIC02vnjFyL+I4RHfvIGNtOgJMe769VTF1VR4EB3ZB";
     };
     github = {
       hostNames = [ "github.com" ];
-      publicKey = config.sops.secrets."github_public_key".path;
+      publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGSrNx0R1+6eHvMpbS21JUbKkniuTZDiK09gF8MFbykv z-l-f@hotmail.com";
     };
   };
 
