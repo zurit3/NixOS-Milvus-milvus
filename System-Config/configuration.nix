@@ -80,6 +80,7 @@
       "lastfm_api_key" = {};
       "lastfm_secret" = {};
       "codeberg_public_key" = {};
+      "github_public_key" = {};
     };
   };
 
