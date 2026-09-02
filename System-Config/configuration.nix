@@ -54,7 +54,7 @@
     zip
     ly
     age sops
-    gnumake gdb clang-tools 
+    gnumake gdb clang-tools openssl
 
     #services
     tailscale
