@@ -49,6 +49,7 @@
       gin = "cd ~/NixOS";
       vps = "bash ~/vpn-switcher.sh";
       edky = "sops ~/NixOS/secrets/secrets.yaml";
+      dlm = "scp -r john@192.168.122.94:~/Downloads/t ~/Downloads/";
     };
   };
 }

@@ -77,8 +77,9 @@
     defaultSopsFormat = "yaml";
     age.keyFile = "/home/zack/.config/sops/age/keys.txt";
     secrets = {
-      "lastfm_api_key" = {};
-      "lastfm_secret" = {};
+      "lastfm_env" = {
+        owner = "navidrome";
+      };
     };
   };
 
@@ -119,11 +120,11 @@
       ScannerEnabled = false;
       LogLevel = "info";
       LastFM.Enabled = true;
-      LastFM.ApiKey = config.sops.secrets."lastfm_api_key".path;
-      LastFM.Secret = config.sops.secrets."lastfm_secret".path;
       Tags.Artists.Split = [" / " " feat. " " feat " " ft. " " ft " "; " " & " " , " ", " "," "/" "&" "  "];
     };
   };
+  systemd.services.navidrome.serviceConfig.EnvironmentFile =
+    config.sops.secrets."lastfm_env".path;
 
   #jellyfin configuration
   services.jellyfin = {
