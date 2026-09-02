@@ -37,7 +37,6 @@
 
     #cli programs
     fastfetch
-    figlet
     fzf
     gitFull
     bat
@@ -52,11 +51,10 @@
 
     #dependencies
     qemu
-    gnumake
     zip
     ly
-    age
-    sops
+    age sops
+    gnumake gdb clang-tools 
 
     #services
     tailscale
