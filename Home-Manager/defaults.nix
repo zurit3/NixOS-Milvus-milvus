@@ -16,6 +16,7 @@
     ./Configs/fastfetch.nix
     ./Configs/htop.nix
     ./Configs/codium.nix
+    ./Shells/C.nix
     
     ./Scripts/wallpaper-cycler.nix
   ];
