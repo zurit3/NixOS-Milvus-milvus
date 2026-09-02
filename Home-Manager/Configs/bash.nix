@@ -39,7 +39,7 @@
       agr = ''cd ~/NixOS && git add ./ && git commit -m "AUTOMATED REBUILD" && rb && cd ~/'';
       cu = ''sudo nix-collect-garbage -d && echo -e "\n\e[38;2;0;200;50mFree your mind.\n"'';
       bc = "cat ~/.bashrc";
-      gp = "git push -u origin master";
+      gp = "git push -u origin main";
       upgrade = ''gin && nix flake update && gaa && gc "AUTOMATED REBUILD: NIX FLAKE UPDATE" && rb'';
       su = "sudo bash --rcfile ~/.bashrc";
       cat = "bat";
