@@ -149,7 +149,7 @@
     };
     github = {
       hostNames = [ "github.com" ];
-      publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl";
+      publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFwABHGNNS37lTXBR1wEzYpQkwQsPkURFtVp2hf+0DTh";
     };
   };
   programs.ssh.startAgent = true;
