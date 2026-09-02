@@ -11,7 +11,12 @@
       { pkgs ? import <nixpkgs> {} }:
 
       pkgs.mkShell {
-        nativeBuildInputs = with pkgs; [];
+        nativeBuildInputs = with pkgs; [
+          gnumake
+          gdb
+          clang-tools
+          openssl
+        ];
         shellHook = ""
           echo "C dev shell ready"
         "";
