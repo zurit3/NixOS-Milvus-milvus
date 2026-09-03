@@ -49,6 +49,8 @@
     gcc
     python312
 
+    openssl xxd
+
     #dependencies
     qemu
     zip
