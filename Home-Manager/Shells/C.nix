@@ -6,7 +6,7 @@
     nix-direnv.enable = true;
   };
 
-  home.file."Documents/Shells/C/shell.nix" = {
+  home.file."Documents/Programming/Shells/C/shell.nix" = {
     text = ''
       { pkgs ? import <nixpkgs> {} }:
 
