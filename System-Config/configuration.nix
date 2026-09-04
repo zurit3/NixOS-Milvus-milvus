@@ -49,8 +49,6 @@
     gcc
     python312
 
-    openssl xxd
-
     #dependencies
     qemu
     zip
@@ -119,7 +117,7 @@
       ScannerEnabled = false;
       LogLevel = "info";
       LastFM.Enabled = true;
-      Tags.Artists.Split = [" / " " feat. " " feat " " ft. " " ft " "; " " & " " , " ", " "," "/" "&" "  "];
+      Tags.Artists.Split = [" / " " feat. " " feat " " ft. " " ft " "/ " "; " " & " " , " ", " "," "/" "&" "  "];
     };
   };
   systemd.services.navidrome.serviceConfig.EnvironmentFile =
@@ -131,10 +129,10 @@
     openFirewall = true;
     user = "jellyfin";
     group = "jellyfin";
-    dataDir   = "/var/lib/jellyfin";
+    dataDir = "/var/lib/jellyfin";
     configDir = "/etc/jellyfin";
-    cacheDir  = "/var/cache/jellyfin";
-    logDir    = "/var/log/jellyfin";
+    cacheDir = "/var/cache/jellyfin";
+    logDir = "/var/log/jellyfin";
   };
 
   #enable tailscale for non-lan access

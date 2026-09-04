@@ -16,6 +16,7 @@
           gdb
           clang-tools
           openssl
+          xxd
         ];
         shellHook = ""
           echo "C dev shell ready"

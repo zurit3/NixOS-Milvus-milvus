@@ -17,6 +17,7 @@
         "window.restoreWindows" = "all";
         "workbench.startupEditor" = "none";
         "nixEnvSelector.suggestion" = false;
+        "security.workspace.trust.untrustedFiles" = "open";
       };
     };
   };
