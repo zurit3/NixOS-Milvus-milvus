@@ -1,7 +1,7 @@
 #./System-Config/configuration.nix
 {pkgs, config, lib, inputs, ...}:
 {
-  #imports: hardware config & home-manager module
+  #imports: hardware config & home-manager module & configuration for all server related services
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ./hardware-configuration.nix
@@ -63,12 +63,15 @@
     #tmp
   ];
 
+  #declaration to not install these default kde programs
   environment.plasma6.excludePackages = with pkgs; [
     kdePackages.elisa
     kdePackages.discover
     kdePackages.konsole
   ];
 
+  #sops configuration for assigning secrets.yaml secrets to a value 
+  #(the value is expressed as a path to the secret) that can be referenced in this configuration
   sops = {
     defaultSopsFile = ../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
@@ -105,6 +108,8 @@
     powerOnBoot = false;
   };
 
+  #adding known hosts that use ssh for validation, these declared hosts do not neeed to be
+  #manually validated or confirmed by clicking "yes i am sure" when connecting
   services.openssh.knownHosts = {
     codeberg = {
       hostNames = [ "codeberg.org" ];
@@ -170,9 +175,9 @@
   };
 
   #random stuff
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  documentation.dev.enable = false;
-  documentation.doc.enable = false;
-  system.stateVersion = "26.11";
-  home-manager.backupFileExtension = "backup";
+  nix.settings.experimental-features = ["nix-command" "flakes"]; #enable flakes
+  documentation.dev.enable = false; #remove documentation for pyhton pkgs (early error fix)
+  documentation.doc.enable = false; #remove documentation for pyhton pkgs (early error fix)
+  system.stateVersion = "26.11"; #system state version (does nothing, is just cosmetic for things like fastfetch info)
+  home-manager.backupFileExtension = "backup"; #if a non-nix file is being replaced by a nix file, add ".backup" to the end of the non-nix file and keep it rather than removing it
 }
