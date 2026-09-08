@@ -48,7 +48,6 @@
     #programming languages
     rustup
     python312
-    gnumake gcc gdb clang-tools openssl xxd
 
     #dependencies
     qemu
