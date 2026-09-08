@@ -12,7 +12,10 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.zack = {
-      imports = [../Home-Manager/defaults.nix];
+      imports = [
+        ./server-services.nix
+        ../Home-Manager/defaults.nix 
+      ];
     };
   };
 
@@ -103,42 +106,6 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = false;
-  };
-
-  #navidrome configuration
-  services.navidrome = {
-    enable = true;
-    openFirewall = true;
-    settings = {
-      MusicFolder = "/srv/music";
-      Address = "0.0.0.0";
-      Port = 4533;
-      DataFolder = "/var/lib/navidrome";
-      ScannerEnabled = false;
-      LogLevel = "info";
-      LastFM.Enabled = true;
-      Tags.Artists.Split = [" / " " feat. " " feat " " ft. " " ft " "/ " "; " " & " " , " ", " "," "/" "&" "  "];
-    };
-  };
-  systemd.services.navidrome.serviceConfig.EnvironmentFile =
-    config.sops.secrets."lastfm_env".path;
-
-  #jellyfin configuration
-  services.jellyfin = {
-    enable = true;
-    openFirewall = true;
-    user = "jellyfin";
-    group = "jellyfin";
-    dataDir = "/var/lib/jellyfin";
-    configDir = "/etc/jellyfin";
-    cacheDir = "/var/cache/jellyfin";
-    logDir = "/var/log/jellyfin";
-  };
-
-  #enable tailscale for non-lan access
-  services.tailscale = {
-    enable = true;
-    openFirewall = true;
   };
 
   services.openssh.knownHosts = {
