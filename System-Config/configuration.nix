@@ -5,6 +5,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ./hardware-configuration.nix
+    ./server-services.nix
   ];
 
   #Home-Manager declaration
@@ -12,10 +13,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.zack = {
-      imports = [
-        ./server-services.nix
-        ../Home-Manager/defaults.nix 
-      ];
+      imports = [../Home-Manager/defaults.nix];
     };
   };
 
