@@ -1,21 +1,21 @@
-#./Home-Manager/Shells/C.nix
+#./Home-Manager/Shells/rust.nix
 {pkgs, lib, config, ...}:
 {
-  home.file."Documents/Programming/Shells/C/shell.nix" = {
+  home.file."Documents/Programming/Shells/Rust/shell.nix" = {
     text = ''
       {pkgs ? import <nixpkgs> {}}:
 
       pkgs.mkShell {
-        name = "c-dev";
+        name = "rust-dev";
 
         nativeBuildInputs = with pkgs; [
-          gcc
-          gnumake
+          rustc
+          cargo
+          rustfmt
+          clippy
+          rust-analyzer
           gdb
-          clang-tools
           pkg-config
-          xxd
-          valgrind
           binutils
           strace
         ];

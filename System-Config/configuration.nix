@@ -35,6 +35,7 @@
     mkvtoolnix
     picard
     vscodium
+    rawtherapee
 
     #cli programs
     fastfetch
@@ -44,11 +45,7 @@
     htop
     yt-dlp
     lm_sensors
-
-    #programming languages
-    rustup
-    python312
-
+    
     #dependencies
     qemu
     zip

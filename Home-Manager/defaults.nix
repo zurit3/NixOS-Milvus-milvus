@@ -17,7 +17,9 @@
     ./Configs/htop.nix
     ./Configs/codium.nix
 
-    ./Shells/C.nix
+    ./Shells/c.nix
+    ./Shells/python312.nix
+    ./Shells/rust.nix
     
     ./Scripts/wallpaper-cycler.nix
   ];
