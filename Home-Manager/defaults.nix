@@ -5,9 +5,6 @@
     username = "zack";
     homeDirectory = "/home/zack";
     stateVersion = "26.11";
-    packages = [
-      pkgs.python312
-    ];
   };
   imports = [
     ./Configs/git.nix
