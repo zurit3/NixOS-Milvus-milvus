@@ -104,6 +104,7 @@
     enable = true;
     powerOnBoot = false;
   };
+  services.blueman.enable = true; #gui for bluetooth
 
   #adding known hosts that use ssh for validation, these declared hosts do not neeed to be
   #manually validated or confirmed by clicking "yes i am sure" when connecting
