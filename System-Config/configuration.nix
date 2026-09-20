@@ -181,7 +181,6 @@
   nix.settings.experimental-features = ["nix-command" "flakes"]; #enable flakes
   documentation.dev.enable = false; #remove documentation for pyhton pkgs (early error fix)
   documentation.doc.enable = false; #remove documentation for pyhton pkgs (early error fix)
-  system.stateVersion = "6.7"; #system state version (does nothing, is just cosmetic for things like fastfetch info)
+  system.stateVersion = "26.11"; #system state version (does nothing, is just cosmetic for things like fastfetch info)
   home-manager.backupFileExtension = "backup"; #if a non-nix file is being replaced by a nix file, add ".backup" to the end of the non-nix file and keep it rather than removing it
-  #26.11
 }
