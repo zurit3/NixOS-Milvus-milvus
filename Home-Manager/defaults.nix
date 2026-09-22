@@ -17,6 +17,7 @@
     ./Shells/c.nix
     ./Shells/python312.nix
     ./Shells/rust.nix
+    ./Shells/c-sharp.nix
     
     ./Scripts/wallpaper-cycler.nix
   ];
